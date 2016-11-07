@@ -62,3 +62,19 @@ print float(total_payments_poi)/poi
 
 for s in enron_data["LAY KENNETH L"]:
     print s, enron_data["LAY KENNETH L"][s]
+
+exercised_stock_options = []
+for key in enron_data:
+    if enron_data[key]["exercised_stock_options"] != "NaN" and key != "TOTAL":
+        exercised_stock_options.append(enron_data[key]["exercised_stock_options"])
+
+print max(exercised_stock_options)
+print min(exercised_stock_options)
+
+salarys = []
+for key in enron_data:
+    if enron_data[key]["salary"] != "NaN" and key != "TOTAL":
+        salarys.append(enron_data[key]["salary"])
+
+print max(salarys)
+print min(salarys)
