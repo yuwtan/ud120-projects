@@ -14,7 +14,14 @@ def outlierCleaner(predictions, ages, net_worths):
     cleaned_data = []
 
     ### your code goes here
+    n = len(predictions)
 
-    
+    errors = abs(net_worths - predictions)
+    error_limit = sorted(errors, reverse=True)[n/10 - 1]
+
+    for i in range(n):
+        if errors[i] < error_limit:
+            cleaned_data.append((ages[i], net_worths[i], errors[i]))
+
     return cleaned_data
 
