@@ -70,6 +70,7 @@ for key in enron_data:
 
 print max(exercised_stock_options)
 print min(exercised_stock_options)
+print (1000000-min(exercised_stock_options))/float(max(exercised_stock_options) - min(exercised_stock_options))
 
 salarys = []
 for key in enron_data:
@@ -78,3 +79,4 @@ for key in enron_data:
 
 print max(salarys)
 print min(salarys)
+print (200000-min(salarys))/float(max(salarys) - min(salarys))
